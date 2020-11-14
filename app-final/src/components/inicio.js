@@ -35,11 +35,11 @@ useEffect(() => {
          
         </Navbar>
       </Header>
-          <Content>
+          <Content style={{ padding: '1%' }}>
           <Grid container spacing={8}>
 
           {data.map((juego) => {
-             return <Grid item xs={4}> <Card datos={juego}/>  </Grid>
+             return <Grid item xs={4} > <Card datos={juego}/>  </Grid>
       })}
       </Grid>
           </Content>
