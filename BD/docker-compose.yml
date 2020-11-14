@@ -7,10 +7,10 @@ services:
     image: mysql:latest 
     restart: always
     environment:
-      MYSQL_DATABASE: 'ayd2_g6'
-      MYSQL_USER: 'admin'
-      MYSQL_PASSWORD: 'admin'
-      MYSQL_ROOT_PASSWORD: 'admin'
+      MYSQL_DATABASE: 'final'
+      MYSQL_USER: 'sopes1'
+      MYSQL_PASSWORD: 'basefinal'
+      MYSQL_ROOT_PASSWORD: 'basefinal'
     build:
       dockerfile: Dockerfile
       context: ./mysql
