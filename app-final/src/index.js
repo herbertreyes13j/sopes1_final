@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-localStorage.setItem("server", 'http://localhost:4200');
+localStorage.setItem("server", 'http://35.202.58.137:4200');
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -26,5 +26,3 @@ services:
     network_mode: host
     labels:
       kompose.service.type: LoadBalancer
-    deploy:
-      replicas: 3
