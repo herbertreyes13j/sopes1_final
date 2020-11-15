@@ -2,7 +2,7 @@ version: '3'
 
 services:
   sample:
-    image: herbertreyes13j/finalfront:2.0
+    image: herbertreyes13j/finalfront:3.0
     build:
       context: app-final/.
       dockerfile: Dockerfile
@@ -17,7 +17,7 @@ services:
       replicas: 3
     
   servidor1:
-    image: herbertreyes13j/finalback:2.0
+    image: herbertreyes13j/finalback:3.0
     build:
       context: Back/.
       dockerfile: Dockerfile
