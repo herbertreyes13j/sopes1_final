@@ -6,9 +6,6 @@ services:
     build:
       context: app-final/.
       dockerfile: Dockerfile
-    volumes:
-      - '.:/app-final/app'
-      - '/app/node_modules'
     ports:
       - 3000:3000
     environment:
@@ -24,9 +21,6 @@ services:
     build:
       context: Back/.
       dockerfile: Dockerfile
-    volumes:
-      - '.:/Back/app'
-      - '/app/node_modules'
     ports:
       - "4200:4200"
     network_mode: host
