@@ -5,7 +5,7 @@ import json
 import MySQLdb
 
 hostname = '35.239.93.30'
-username = 'sopes1'
+username = 'sopes1_2'
 password = 'basefinal'
 database = 'final'
 
