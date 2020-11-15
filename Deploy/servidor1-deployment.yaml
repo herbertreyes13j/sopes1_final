@@ -1,41 +1,38 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   annotations:
     kompose.cmd: kompose convert
     kompose.service.type: LoadBalancer
-    kompose.version: 1.16.0 (0c01309)
+    kompose.version: 1.21.0 (992df58d8)
   creationTimestamp: null
   labels:
     io.kompose.service: servidor1
   name: servidor1
 spec:
   replicas: 3
-  strategy:
-    type: Recreate
+  selector:
+    matchLabels:
+      io.kompose.service: servidor1
+  strategy: {}
   template:
     metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.service.type: LoadBalancer
+        kompose.version: 1.21.0 (992df58d8)
       creationTimestamp: null
       labels:
         io.kompose.service: servidor1
     spec:
       containers:
-      - image: servidor1
+      - image: herbertreyes13j/finalback:1.0
+        imagePullPolicy: ""
         name: servidor1
         ports:
         - containerPort: 4200
         resources: {}
-        volumeMounts:
-        - mountPath: /Back/app
-          name: servidor1-claim0
-        - mountPath: /app/node_modules
-          name: servidor1-claim1
       restartPolicy: Always
-      volumes:
-      - name: servidor1-claim0
-        persistentVolumeClaim:
-          claimName: servidor1-claim0
-      - name: servidor1-claim1
-        persistentVolumeClaim:
-          claimName: servidor1-claim1
+      serviceAccountName: ""
+      volumes: null
 status: {}
