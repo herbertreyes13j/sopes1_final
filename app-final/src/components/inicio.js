@@ -48,4 +48,4 @@ useEffect(() => {
     )
 }
 
-export default Inicio;
+export default Inicio;  
