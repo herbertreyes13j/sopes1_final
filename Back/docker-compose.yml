@@ -1,7 +1,0 @@
-version: '2.2'
-services: 
-  servidor1:
-    build: .
-    ports:
-      - "4200:4200"
-    network_mode: host

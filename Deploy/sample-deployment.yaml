@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.service.type: LoadBalancer
+    kompose.version: 1.16.0 (0c01309)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: sample
+  name: sample
+spec:
+  replicas: 3
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: sample
+    spec:
+      containers:
+      - env:
+        - name: CHOKIDAR_USEPOLLING
+          value: "true"
+        image: sample
+        name: sample
+        ports:
+        - containerPort: 3000
+        resources: {}
+        stdin: true
+        volumeMounts:
+        - mountPath: /app-final/app
+          name: sample-claim0
+        - mountPath: /app/node_modules
+          name: sample-claim1
+      restartPolicy: Always
+      volumes:
+      - name: sample-claim0
+        persistentVolumeClaim:
+          claimName: sample-claim0
+      - name: sample-claim1
+        persistentVolumeClaim:
+          claimName: sample-claim1
+status: {}
