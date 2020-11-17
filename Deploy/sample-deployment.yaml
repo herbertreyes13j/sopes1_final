@@ -29,7 +29,7 @@ spec:
       - env:
         - name: CHOKIDAR_USEPOLLING
           value: "true"
-        image: herbertreyes13j/finalfront:4.0
+        image: herbertreyes13j/finalfront:5.0
         imagePullPolicy: ""
         name: sample
         ports:

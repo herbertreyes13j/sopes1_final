@@ -10,7 +10,7 @@ metadata:
     io.kompose.service: servidor1
   name: servidor1
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       io.kompose.service: servidor1
@@ -26,7 +26,7 @@ spec:
         io.kompose.service: servidor1
     spec:
       containers:
-      - image: herbertreyes13j/finalback:4.0
+      - image: herbertreyes13j/finalback:5.0
         imagePullPolicy: ""
         name: servidor1
         ports:
