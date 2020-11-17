@@ -26,7 +26,7 @@ spec:
         io.kompose.service: servidor1
     spec:
       containers:
-      - image: herbertreyes13j/finalback:3.0
+      - image: herbertreyes13j/finalback:4.0
         imagePullPolicy: ""
         name: servidor1
         ports:
